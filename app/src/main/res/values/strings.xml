@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Spare Change</string>
+
+    <string name="spare_change_title">Spare Change</string>
+    <string name="spare_change_week">Spare change\nlast week</string>
+    <string name="spare_change_account">Account</string>
+    <string name="spare_change_fund">Add to Savings</string>
+    <string name="spare_change_funded">Savings goal funded successfully</string>
+
+    <string name="transactions_title">Transactions</string>
+    <string name="transactions_error_empty">No transactions to display</string>
+
+    <string name="savings_goals_title">Savings Goals</string>
+    <string name="savings_goals_percent">(%1$d%% complete)</string>
+    <string name="savings_goals_add">New Savings Goal</string>
+    <string name="savings_goals_save">Save</string>
+    <string name="savings_goals_cancel">Cancel</string>
+    <string name="savings_goals_hint_name">Goal name</string>
+    <string name="savings_goals_hint_target">Target amount</string>
+    <string name="savings_goals_choose">Choose Savings Goal</string>
+    <string name="savings_goals_choose_hint">Choose a savings goal to transfer spare change into</string>
+    <string name="savings_goals_error_empty">No savings goals to display</string>
+</resources>

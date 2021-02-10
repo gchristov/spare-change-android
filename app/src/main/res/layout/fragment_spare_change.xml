@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="com.gchristov.sparechange.ui.activities.dashboard.DashboardActivity" />
+
+        <variable
+            name="state"
+            type="com.gchristov.sparechange.ui.activities.dashboard.DashboardViewModel.State" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:onRefreshListener="@{() -> activity.refresh()}"
+        app:refreshing="@{state.refreshing}">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/accent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.9"
+                android:background="@drawable/gradient_spare_change"
+                android:scaleY="0.8" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/activity_margin">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/spare_change_account"
+                        android:textColor="@color/accent_text"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{state.account != null ? state.account.name : `--`}"
+                        android:textColor="@color/gray_amount"
+                        android:textSize="30sp"
+                        tools:text="Personal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="180dp"
+                        android:layout_height="180dp"
+                        android:background="@drawable/circle_accent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{state.roundUpAmount != null ? state.roundUpAmount.price() : `--`}"
+                            android:textColor="@color/gray_amount"
+                            android:textSize="36sp"
+                            tools:text="£1.80" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/spare_change_week"
+                            android:textColor="@color/accent_text"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.4"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <!-- Foreground warning can be fixed by creating appropriate state selector in drawable-v23 -->
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:background="@drawable/btn_rounded_light"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:onClick="@{() -> activity.startFundSavingsGoalFlow()}"
+                        android:paddingStart="@dimen/activity_margin"
+                        android:paddingEnd="@dimen/activity_margin"
+                        android:text="@string/spare_change_fund" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

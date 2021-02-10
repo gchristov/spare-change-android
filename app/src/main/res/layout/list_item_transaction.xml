@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="dateFormat"
+            type="java.text.SimpleDateFormat" />
+
+        <variable
+            name="item"
+            type="com.gchristov.sparechange.repository.model.FeedItem" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/activity_margin_double"
+        android:paddingTop="@dimen/activity_margin_double"
+        android:paddingEnd="@dimen/activity_margin_double">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/activity_margin_double"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{item.counterPartyName}"
+                android:textColor="@color/accent"
+                android:textSize="24sp"
+                tools:text="Transaction" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{dateFormat.format(item.transactionTime)}"
+                android:textColor="@color/accent"
+                android:textSize="14sp"
+                tools:text="14 Aug 2021, 14:37" />
+
+            <View
+                style="@style/SeparatorTheme"
+                android:layout_marginTop="@dimen/activity_margin" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{item.price()}"
+            android:textColor="@color/accent"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:text="£12.67" />
+    </LinearLayout>
+</layout>

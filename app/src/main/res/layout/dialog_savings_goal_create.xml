@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:minWidth="@dimen/dialog_min_width"
+        android:orientation="vertical"
+        android:padding="@dimen/dialog_padding">
+
+        <EditText
+            android:id="@+id/nameField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_margin_double"
+            android:hint="@string/savings_goals_hint_name"
+            android:inputType="textFilter|textNoSuggestions|textCapSentences"
+            android:singleLine="true"
+            android:textColor="@color/accent"
+            android:textColorHint="@color/gray_tab"
+            android:textSize="26sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_margin_half"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="@dimen/activity_margin"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="£"
+                android:textColor="@color/accent"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/amountField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_margin"
+                android:hint="@string/savings_goals_hint_target"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:textColor="@color/accent"
+                android:textColorHint="@color/gray_tab"
+                android:textSize="26sp" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>
