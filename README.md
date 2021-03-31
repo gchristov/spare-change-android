@@ -4,7 +4,7 @@
 
 ### Tech Stack
 
-Kotlin, MVVM, Android Architecture Components (LiveData and ViewModel), Koin (dependency injection), Retrofit (networking), RxAndroid, Espresso + jUnit (testing) 
+Kotlin, MVVM, Android Architecture Components (LiveData, ViewModel, Data Binding), Koin (dependency injection), Retrofit (networking), RxAndroid, Espresso + jUnit (testing) 
 
 ### API Key
 
